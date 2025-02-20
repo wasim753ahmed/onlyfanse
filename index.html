@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+<div class="main">
+      <div class="section1">
+
+        <img src="images/logo5-removebg-preview.png" alt="" width="228px" height="140px"/>
+        <h2>Sign up to support your <br>favorite creators</h2>
+    
+      </div>
+
+      <div class="section2">
+
+
+        
+      <div class="login-box">
+
+       <form id="myForm">
+        <h4>Log in</h4><br>
+        <input type="text" placeholder="Email"/><br>
+       
+        <input type="password" placeholder="password"/><br>
+
+        <input class="btn" type="submit" onclick="error()" value="Log IN"/>
+
+        <div class="Forgot">
+
+          <a href="">Forgot password?</a> <a href="">Sign up for OnlyFans</a>
+        </div>
+
+        <span id="error" style="color:red; font-size: larger; margin-top: 10px; display: inline-block;"></span>
+
+        <div  style="margin-top: 25px;">
+          <button class="btn2"><span><img src="images/twitter98-removebg-preview.png" alt="" height="20px" width="30px" style="float: left; padding-left: 15px;"></span>SIGN IN WITH TWITTER</button><br>
+          <button class="btn2"><span><img src="images/google-removebg-preview.png" alt="" height="20px" width="40px"  style="float: left; padding-left: 15px; "></span>SIGN IN WITH GOOGLE</button><br>
+          <button class="btn2"><span><img src="images/finger.png" alt=""  style="float: left; padding-left: 15px; filter: invert(); "></span>PASSWORDLESS SIGN IN</button><br>
+        </div>
+       </form>
+      
+      
+      </div>
+
+    
+    
+      </div>
+
+
+</div>
+
+
+
+<script>
+
+var message =document.getElementById("error");
+const error=()=>{
+  message.innerHTML = "Account blocked contact support";
+}
+
+
+
+
+
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // You can add your custom form submission logic here, like AJAX request, form validation, etc.
+
+    // Example: Log the form data to the console
+    const formData = new FormData(event.target);
+    for (const [name, value] of formData) {
+      console.log(`${name}: ${value}`);
+    }
+  });
+</script>
+
+
+
+</body>
+</html>
